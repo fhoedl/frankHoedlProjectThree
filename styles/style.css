@@ -259,7 +259,6 @@ h1,
 h2,
 h3 {
   font-family: "Prata", serif;
-  font-size: 4.8rem;
   color: #1b6176;
 }
 
@@ -273,23 +272,36 @@ p {
   width: 420px;
   height: 420px;
   border-radius: 50%;
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: auto;
 }
 
 h1 {
+  font-size: 4.8rem;
   margin: auto;
-  text-align: center;
-  padding-bottom: 8%;
+  padding-bottom: 1rem;
+  line-height: 6rem;
+  letter-spacing: .05rem;
 }
 
-span {
+h1 span {
+  letter-spacing: .04rem;
   display: block;
-  width: 100%;
-  font-size: 3rem;
-  opacity: 40%;
+  font-size: 2.25rem;
+  opacity: 20%;
+  line-height: 3rem;
+}
+
+h1 span:last-of-type {
+  opacity: 50%;
+  color: #cdad45;
 }
 
 .featContainer {

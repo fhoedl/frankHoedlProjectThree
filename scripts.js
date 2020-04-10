@@ -7,7 +7,7 @@ const fhApp = {};
 
 
 // create Object... Questions
-fhApp.objQuestions = [
+fhApp.questionsArray = [
     {   
         title: `Question 1`,
         question: `Pick one...`,
@@ -47,24 +47,27 @@ fhApp.objQuestions = [
     ]
 
 
+
 // ...first function
 // fhApp.func1 = () => {
 
 // }
 
 
-// ...second function
-fhApp.func2 = () => {
-    const random = Math.floor(Math.random() * (fhApp.objQuestions).length );
-    console.log(random, `...remove log`);
+// ...generate random number (using.length) 
+    // (NOTE: starts at ZERO, but okay as arrays are ZERO BASED)
+fhApp.getRandomNum = () => {
+    const random = Math.floor(Math.random() * (fhApp.questionsArray).length );
+    // console.log(random, `...remove log`);    // 
     return random;
 }
 
-fhApp.func3 = () => {
+// ...on event, CALLS getRandomNum
+fhApp.getQuestion = () => {
     $('.logo').on('click', function (e) {
         e.preventDefault();
-        const random = fhApp.func2();
-        console.log(fhApp.objQuestions[random].title, `...remove log`);
+        const random = fhApp.getRandomNum();
+        console.log(fhApp.questionsArray[random].question, `...remove log`);
     });
 }
 
@@ -72,15 +75,7 @@ fhApp.func3 = () => {
 // init FUNCTION 
 // ... to CALL functions
 fhApp.init = () => {
-    // console.log(`INITIALIZED..remove log`);
-    // console.log(fhApp.objQuestions[0].title, `...remove log`);
-
-    // $('.logo').on('click', function (e) {
-    //     e.preventDefault();
-    //     const random = fhApp.func2();
-    //     console.log(fhApp.objQuestions[random].title, `...remove log`);
-    // });
-    fhApp.func3();
+    fhApp.getQuestion();
 }
 // fhApp.func1(); 
 // Etc...
