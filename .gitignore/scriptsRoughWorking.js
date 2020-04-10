@@ -48,24 +48,17 @@ fhApp.objQuestions = [
 
 
 // ...first function
-// fhApp.func1 = () => {
+fhApp.func1 = () => {
 
-// }
+}
 
 
 // ...second function
 fhApp.func2 = () => {
     const random = Math.floor(Math.random() * (fhApp.objQuestions).length );
-    console.log(random, `...remove log`);
+    console.log(random);
     return random;
-}
 
-fhApp.func3 = () => {
-    $('.logo').on('click', function (e) {
-        e.preventDefault();
-        const random = fhApp.func2();
-        console.log(fhApp.objQuestions[random].title, `...remove log`);
-    });
 }
 
 
@@ -75,12 +68,12 @@ fhApp.init = () => {
     // console.log(`INITIALIZED..remove log`);
     // console.log(fhApp.objQuestions[0].title, `...remove log`);
 
-    // $('.logo').on('click', function (e) {
-    //     e.preventDefault();
-    //     const random = fhApp.func2();
-    //     console.log(fhApp.objQuestions[random].title, `...remove log`);
-    // });
-    fhApp.func3();
+    $('.logo').on('click', function (e) {
+        e.preventDefault();
+        const random = fhApp.func2();
+        console.log(fhApp.objQuestions[random].title, `...remove log`);
+    });
+
 }
 // fhApp.func1(); 
 // Etc...
