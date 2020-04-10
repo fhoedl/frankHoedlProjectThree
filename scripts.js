@@ -1,13 +1,8 @@
 // namespacing
-    // ... rename "fhApp", rename "#func#", 
-const fhApp = {};
+const rabbitApp = {};
 
-
-// assigning Global Variables
-
-
-// create Object... Questions
-fhApp.questionsArray = [
+// ARRAY... Questions w/ options & answers
+rabbitApp.questionsArray = [
     {   
         title: `Question 1`,
         question: `Pick one...`,
@@ -46,44 +41,39 @@ fhApp.questionsArray = [
     }
     ]
 
+// shuffling the questions
+rabbitApp.shuffleQuestion = function shuffle(array) {
+    // alternative sort
+    // array.sort(() => Math.random() - 0.5);
 
-
-// ...first function
-// fhApp.func1 = () => {
-
-// }
-
-
-// ...generate random number (using.length) 
-    // (NOTE: starts at ZERO, but okay as arrays are ZERO BASED)
-fhApp.getRandomNum = () => {
-    const random = Math.floor(Math.random() * (fhApp.questionsArray).length );
-    // console.log(random, `...remove log`);    // 
-    return random;
+    // Fisher-Yates shuffle. 
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    console.log(rabbitApp.questionsArray, `...remove log`);
 }
 
-// ...on event, CALLS getRandomNum
-fhApp.getQuestion = () => {
-    $('.logo').on('click', function (e) {
+// ...on event, CALLS Question
+rabbitApp.getQuestion = () => {
+    $('.logo').on('click', (e) =>{
         e.preventDefault();
-        const random = fhApp.getRandomNum();
-        console.log(fhApp.questionsArray[random].question, `...remove log`);
+        $('div.logo').toggleClass('landingElement', 1000, `easeInSine`);
+        console.log(rabbitApp.questionsArray[0].question, `...remove log`);
+        console.log(rabbitApp.questionsArray[1].question, `...remove log`);
+        console.log(rabbitApp.questionsArray[2].question, `...remove log`);
     });
 }
 
-
-// init FUNCTION 
-// ... to CALL functions
-fhApp.init = () => {
-    fhApp.getQuestion();
+// init FUNCTION Calls
+rabbitApp.init = () => {
+    rabbitApp.shuffleQuestion(rabbitApp.questionsArray)  
+    rabbitApp.getQuestion();
 }
-// fhApp.func1(); 
-// Etc...
 
-// DOCUMENT READY
-// ... with init FUNCTION CALL
+// DOCUMENT READY... with init FUNCTION CALL
 $(() => {
-    fhApp.init();
+    rabbitApp.init();
 })
 
 

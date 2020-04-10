@@ -251,20 +251,32 @@ html {
 }
 
 body {
-  font-family: "Prata", serif;
-  font-family: "Lato", sans-serif;
+  font-family: "Lora", serif;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: all, 1000ms, ease-in;
+  transition: all, 1000ms, ease-in;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Prata", serif;
-  color: #1b6176;
+  font-family: "Lora", serif;
 }
 
 p {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
+}
+
+.featContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #c0e0ed;
 }
 
 .logo {
@@ -284,31 +296,38 @@ p {
 }
 
 h1 {
-  font-size: 4.8rem;
-  margin: auto;
-  padding-bottom: 1rem;
+  color: #1b6176;
+  font-size: 6.4rem;
   line-height: 6rem;
-  letter-spacing: .05rem;
+  font-weight: 500;
+  margin: auto;
+  padding-bottom: .2rem;
 }
 
 h1 span {
+  font-size: 2.25rem;
+  line-height: 3rem;
+  text-transform: lowercase;
   letter-spacing: .04rem;
   display: block;
-  font-size: 2.25rem;
-  opacity: 20%;
-  line-height: 3rem;
+  opacity: 30%;
 }
 
 h1 span:last-of-type {
-  opacity: 50%;
+  padding-top: .5rem;
   color: #cdad45;
+  opacity: 60%;
 }
 
-.featContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  background-color: #a0d1e4;
+.landingElement {
+  visibility: hidden;
+  background-color: #c0e0ed;
+  -webkit-transition: all, 1000ms;
+  transition: all, 1000ms;
+}
+
+.landingElement h1 {
+  opacity: 0%;
+  -webkit-transition: all, 1000ms;
+  transition: all, 1000ms;
 }

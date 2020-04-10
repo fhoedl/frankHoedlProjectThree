@@ -7,6 +7,9 @@ html {
 body {
     font-family: $primaryFont;
     font-family: $secondaryFont;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all, 1000ms, ease-in;
 }
 
 h1,
@@ -14,9 +17,6 @@ h2,
 h3
 {
     font-family: $primaryFont;
-    color: $secondaryColor;
-    // letter-spacing: .1rem;
-    // text-transform: uppercase ;
 }
 
 p{
@@ -25,6 +25,16 @@ p{
     // line-height: 2.4rem; 
 }
 
+// LANDING PAGE
+.featContainer {
+    display: flex;
+    // margin:auto;
+    // flex-direction: ;
+    height: 100vh;
+    width: 100%;
+    // background-color: $primaryColor;
+    background-color: lighten($primaryColor, 8%);
+}
 .logo {
     background-color: $lightColor;
     width: 420px;
@@ -35,39 +45,38 @@ p{
     flex-direction: column;
     margin: auto;
 }
-
 h1{
-    font-size: 4.8rem;
-    margin: auto;
-    // text-align: center;
-    padding-bottom: 1rem; 
+    color: $secondaryColor;
+    font-size: 6.4rem;
     line-height: 6rem; 
-    letter-spacing: .05rem;
+    // text-transform: uppercase;
+    font-weight: 500;
+    margin: auto;
+    padding-bottom: .2rem; 
         span{
-        letter-spacing: .04rem;
-        display: block;
-        font-size: 2.25rem;
-        opacity: 20%;
-        line-height: 3rem; 
-        // font-style: italic;
-            &:last-of-type{
-                opacity: 50%;
-                color: $accentColor;
-                // padding-top: .3vw;
-
+            font-size: 2.25rem;
+            line-height: 3rem;
+            text-transform: lowercase; 
+            letter-spacing: .04rem;
+            display: block;
+            opacity: 30%;
+                &:last-of-type{
+                    padding-top: .5rem;     
+                    color: $accentColor;
+                    opacity: 60%;
             }
         }
 }
 
 
-
-
-
-.featContainer {
-    display: flex;
-    // margin:auto;
-    // flex-direction: ;
-    height: 100vh;
-    width: 100%;
-    background-color: $primaryColor;
+// INSTRUCTIONS & START BUTTON
+.landingElement {
+    visibility: hidden;
+    // opacity: 0%;
+    background-color: lighten($primaryColor, 8%);
+    transition: all, 1000ms;
+        h1{
+            opacity: 0%;
+            transition: all, 1000ms;
+        }
 }
