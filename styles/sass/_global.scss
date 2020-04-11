@@ -45,6 +45,7 @@ p{
     flex-direction: column;
     margin: auto;
 }
+
 h1{
     color: $secondaryColor;
     font-size: 6.4rem;
@@ -68,15 +69,15 @@ h1{
         }
 }
 
-
 // INSTRUCTIONS & START BUTTON
 .landingElement {
     visibility: hidden;
-    // opacity: 0%;
+    opacity: 0%; //needed for h1 to transition 
     background-color: lighten($primaryColor, 8%);
     transition: all, 1000ms;
-        h1{
-            opacity: 0%;
-            transition: all, 1000ms;
-        }
+
+        // h1{
+        //     opacity: 0%;
+        //     transition: all, 1000ms;
+        // }
 }

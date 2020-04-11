@@ -5,27 +5,24 @@ const rabbitApp = {};
 rabbitApp.questionsArray = [
     {   
         title: `Question 1`,
-        question: `Pick one...`,
-        option1: `tom`,
-        option2: `bjork`,
-        option3: `barry`,
-        answerURL1: `...link to innocent when you dream`,
-        answerURL2: `...link to bjork content`,
+        question: `Tom, Dick or Harry? no...`,
+        option1: `Tom`,
+        option2: `Bjork`,
+        option3: `Barry`,
+        answerURL1: "You are Innocent when you Dream by Tom Waits , https://www.youtube.com/watch?v=WPxwPJn1itw",
+        answerURL2: `Violently Happy by Bjork, https://www.youtube.com/watch?v=wx1YGsvdpfo`,
         answerURL3: `...link to "how deep is your love" cover`,
-        property2: ``,
-        property3: ``
     },
     {
         title: `Question 2`,
-        question: `Favorite Color Family`,
-        option1: `blue`,
-        option2: `green`,
-        option3: `blue`,
-        answerURL1: `...link to blue`,
-        answerURL2: `...link to green content`,
-        answerURL3: `...link to "blue" cover`,
-        property2: ``,
-        property3: ``
+        question: `Describe yourself, I'm a...`,
+        option1: `dreamer`,
+        option2: `little sad`,
+        option3: `lover`,
+        answerURL1: `You are Innocent when you Dream by Tom Waits https://www.youtube.com/watch?v=WPxwPJn1itw"`,
+        answerURL2: `Charles Bradley performs soulful cover of Black Sabbath's 'Changes', https://www.youtube.com/watch?v=zfaOf70M4xs`,
+        answerURL3: `"The Avalanches - Because I'm Me , https://www.youtube.com/watch?v=eu0KsZ_MVBc"`,
+
     },
     {
         title: `Question 3`,
@@ -36,8 +33,20 @@ rabbitApp.questionsArray = [
         answerURL1: `...link to "Rocky Horror"`,
         answerURL2: `...link to bat out of hell content`,
         answerURL3: `...link to "Fight Club"`,
-        property2: ``,
-        property3: ``
+
+    },
+    {
+        title: `Question 4`,
+        question: `Who in the world am I?`,
+        option1: `Alice`,
+        option2: `The (Mad) Hatter`,
+        option3: `The Cheshire Cat`,
+        answer1: `"“..it’s no use going back to yesterday, because I was a different person then"`,
+        answer2: `"If you only knew time as well as I do, said the Hatter, you wouldn't talk about wasting it"`,
+        answer3: `"Would you tell me, please, which way I ought to go from here?
+        That depends a good deal on where you want to get to, said the Cat.
+        I don’t much care where–‘ said Alice. 
+        Then it doesn’t matter which way you go, said the Cat."`,
     }
     ]
 
@@ -56,9 +65,9 @@ rabbitApp.shuffleQuestion = function shuffle(array) {
 
 // ...on event, CALLS Question
 rabbitApp.getQuestion = () => {
-    $('.logo').on('click', (e) =>{
+    $('.logo, h1').on('click', (e) =>{
         e.preventDefault();
-        $('div.logo').toggleClass('landingElement', 1000, `easeInSine`);
+        $('div.logo').css('transform', 'scale(0)').toggleClass('landingElement', 1000, `easeInSine`);
         console.log(rabbitApp.questionsArray[0].question, `...remove log`);
         console.log(rabbitApp.questionsArray[1].question, `...remove log`);
         console.log(rabbitApp.questionsArray[2].question, `...remove log`);
