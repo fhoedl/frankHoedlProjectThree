@@ -3,20 +3,35 @@ html {
     font-size: 62.5%;
 }
 
-// BASE FONTS
 body {
+    // BASE FONTS & Smoothing
     font-family: $primaryFont;
     font-family: $secondaryFont;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    // Smoothing resizing with Transitions
     transition: all, 1000ms, ease-in;
+    background-color: lighten($primaryColor, 8%);
 }
+
+.wrapper {
+    margin: 0 auto;
+    // max-width: 1280;
+    max-width: 1440;
+    width: 90%;
+}
+
 
 h1,
 h2,
 h3
 {
     font-family: $primaryFont;
+}
+h3{
+    display: inline-block;
+    margin: auto; //vertically centering
+    // font-size: ;
 }
 
 p{
@@ -26,25 +41,35 @@ p{
 }
 
 // LANDING PAGE
-.featContainer {
-    display: flex;
-    // margin:auto;
-    // flex-direction: ;
-    height: 100vh;
-    width: 100%;
-    // background-color: $primaryColor;
-    background-color: lighten($primaryColor, 8%);
+.hole {
+    @include circle(60px, $lightColor); 
+    //... expecting (size -likely pixels, color)
+    // currently is...
+    // width: 60px; 
+    // height: 60px;
+    // background-color: $lightColor); 
+    // border-radius: 50%;
+    // text-align: center;
+    // display: flex; //enabling vertical centering
+    // flex-direction: column;
+        &.largeLogo {
+            width: calc(100vw * .9);
+            height: calc(100vw * .9);
+            max-width: 420px;
+            max-height: 420px;
+            margin: auto; //vertically centering
+        }
 }
-.logo {
-    background-color: $lightColor;
-    width: 420px;
-    height: 420px;
-    border-radius: 50%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
+
+// Needed to Facilitate centering
+.featContainer { 
+    display: flex; //enabling centering
+    height: 100vh; //enabling vertical center
+    padding-bottom: 5vh; //visual centering
 }
+
+
+
 
 h1{
     color: $secondaryColor;

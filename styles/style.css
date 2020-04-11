@@ -244,8 +244,6 @@ template {
   overflow: hidden;
 }
 
-/* RGB */
-/* HSL */
 html {
   font-size: 62.5%;
 }
@@ -257,6 +255,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-transition: all, 1000ms, ease-in;
   transition: all, 1000ms, ease-in;
+  background-color: #c0e0ed;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1440;
+  width: 90%;
 }
 
 h1,
@@ -265,24 +270,20 @@ h3 {
   font-family: "Lora", serif;
 }
 
+h3 {
+  display: inline-block;
+  margin: auto;
+}
+
 p {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
 }
 
-.featContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  background-color: #c0e0ed;
-}
-
-.logo {
+.hole {
+  width: 60px;
+  height: 60px;
   background-color: #fcfff7;
-  width: 420px;
-  height: 420px;
   border-radius: 50%;
   text-align: center;
   display: -webkit-box;
@@ -292,7 +293,22 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.hole.largeLogo {
+  width: calc(100vw * .9);
+  height: calc(100vw * .9);
+  max-width: 420px;
+  max-height: 420px;
   margin: auto;
+}
+
+.featContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  padding-bottom: 5vh;
 }
 
 h1 {
@@ -325,4 +341,10 @@ h1 span:last-of-type {
   background-color: #c0e0ed;
   -webkit-transition: all, 1000ms;
   transition: all, 1000ms;
+}
+
+@media (min-width: 466px) {
+  .largeLogo {
+    margin: auto;
+  }
 }

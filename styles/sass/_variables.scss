@@ -1,9 +1,9 @@
-// $primaryFont: 'Prata', serif;
-// $secondaryFont: 'Lato', sans-serif;
 
+// FONTS
 $primaryFont: 'Lora', serif;
 $secondaryFont: 'Montserrat', sans-serif;
 
+// COLORS
 $primaryColor:  #a0d1e4;
 $secondaryColor: rgb(27, 97, 118);
 
@@ -12,22 +12,15 @@ $darkColor: rgba(51, 55, 69, 1);
 
 $accentColor:  rgb(205, 173, 69);
 
-
-
-
-
-// Coolors 5_theRabbitHole
-
-/* RGB */
-// $color1: rgba(51, 55, 69, 1);
-// $color2: rgba(252, 255, 247, 1);
-// $color3: rgba(128, 255, 236, 1);
-// $color4: rgba(57, 162, 174, 1);
-// $color5: rgba(146, 220, 229, 1);
-
-/* HSL */
-// $color1: hsla(227%, 15%, 24%, 1);
-// $color2: hsla(83%, 100%, 98%, 1);
-// $color3: hsla(171%, 100%, 75%, 1);
-// $color4: hsla(186%, 51%, 45%, 1);
-// $color5: hsla(187%, 61%, 74%, 1);
+// MIXINS
+@mixin circle($size: 60px, $color: $lightColor){
+    // height & width are the same for circle
+    // $lightColor is default
+    width: #{$size}; 
+    height: #{$size};
+    background-color: #{$color}; 
+    border-radius: 50%;
+    text-align: center;
+    display: flex; //enabling vertical centering
+    flex-direction: column;
+}
