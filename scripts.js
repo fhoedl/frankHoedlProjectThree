@@ -66,9 +66,9 @@ rabbitApp.shuffleQuestion = function shuffle(array) {
 rabbitApp.getQuestion = () => {
     $('.lrgLogo, h1').on('click', (e) =>{
         e.preventDefault();
-        $('div.lrgLogo')
-            .css('transform', 'scale(4)')
-            .toggleClass('landingElement', 100, `easeInSine`);
+        $("div.lrgLogo")
+             .css("transform", "scale(4)", "1000ms", `easeIn`)
+             .toggleClass("landingElement", 100, `easeInSine`);
             
         console.log(rabbitApp.questionsArray[0].question, `...remove log`);
         console.log(rabbitApp.questionsArray[1].question, `...remove log`);
