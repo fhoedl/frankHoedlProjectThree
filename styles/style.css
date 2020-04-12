@@ -255,13 +255,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-transition: all, 1000ms, ease-in;
   transition: all, 1000ms, ease-in;
-  background-color: #c0e0ed;
+  background-color: #bfe0ed;
 }
 
 .wrapper {
   margin: 0 auto;
   max-width: 1440;
-  width: 90%;
+  width: 96%;
 }
 
 h1,
@@ -278,11 +278,17 @@ h3 {
 p {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
+  line-height: 1.8rem;
+}
+
+header {
+  position: absolute;
+  z-index: 10;
 }
 
 .hole {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: #fcfff7;
   border-radius: 50%;
   text-align: center;
@@ -295,12 +301,14 @@ p {
           flex-direction: column;
 }
 
-.hole.largeLogo {
-  width: calc(100vw * .9);
-  height: calc(100vw * .9);
-  max-width: 420px;
-  max-height: 420px;
+.hole.lrgLogo {
+  width: calc(30vw * 3);
+  height: calc(30vw * 3);
   margin: auto;
+}
+
+.hole.headLogo {
+  margin: 3vh;
 }
 
 .featContainer {
@@ -308,29 +316,30 @@ p {
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
-  padding-bottom: 5vh;
+  padding-bottom: 2vh;
 }
 
 h1 {
   color: #1b6176;
-  font-size: 6.4rem;
-  line-height: 6rem;
+  font-size: 4.6rem;
+  line-height: 4.6rem;
   font-weight: 500;
   margin: auto;
-  padding-bottom: .2rem;
+  padding: 0 5% .2rem 5%;
 }
 
 h1 span {
-  font-size: 2.25rem;
-  line-height: 3rem;
+  font-size: 1.8rem;
+  line-height: 1.6rem;
   text-transform: lowercase;
   letter-spacing: .04rem;
   display: block;
   opacity: 30%;
+  padding-bottom: .4rem;
 }
 
 h1 span:last-of-type {
-  padding-top: .5rem;
+  padding-top: .4rem;
   color: #cdad45;
   opacity: 60%;
 }
@@ -338,13 +347,39 @@ h1 span:last-of-type {
 .landingElement {
   visibility: hidden;
   opacity: 0%;
-  background-color: #c0e0ed;
-  -webkit-transition: all, 1000ms;
-  transition: all, 1000ms;
+  scale: 4;
+  background-color: #50aace;
+  -webkit-filter: brightness(10%) hue-rotate(197) saturate(56%);
+          filter: brightness(10%) hue-rotate(197) saturate(56%);
+  -webkit-transition: all, 1500ms;
+  transition: all, 1500ms;
 }
 
-@media (min-width: 466px) {
-  .largeLogo {
-    margin: auto;
+.landingElement h1 {
+  opacity: 0%;
+  scale: .7;
+  -webkit-transition: opacity, 700ms;
+  transition: opacity, 700ms;
+}
+
+@media (min-width: 480px) {
+  .hole.lrgLogo {
+    max-width: 420px;
+    max-height: 420px;
+  }
+  h1 {
+    font-size: calc(3.7rem + 1.6vw);
+    line-height: calc(3.7rem + 1.6vw);
+  }
+  h1 span {
+    font-size: calc(1.6rem + .2vw);
+    line-height: calc(1.6rem + .3vw);
+  }
+}
+
+@media (max-height: 480px) {
+  .hole.lrgLogo {
+    width: 300px;
+    height: 300px;
   }
 }

@@ -4,7 +4,7 @@ $primaryFont: 'Lora', serif;
 $secondaryFont: 'Montserrat', sans-serif;
 
 // COLORS
-$primaryColor:  #a0d1e4;
+$primaryColor:  hsl(197, 56%, 76%);
 $secondaryColor: rgb(27, 97, 118);
 
 $lightColor: rgba(252, 255, 247, 1);
@@ -13,7 +13,7 @@ $darkColor: rgba(51, 55, 69, 1);
 $accentColor:  rgb(205, 173, 69);
 
 // MIXINS
-@mixin circle($size: 60px, $color: $lightColor){
+@mixin circle($size: 50px, $color: $lightColor){
     // height & width are the same for circle
     // $lightColor is default
     width: #{$size}; 
@@ -24,3 +24,13 @@ $accentColor:  rgb(205, 173, 69);
     display: flex; //enabling vertical centering
     flex-direction: column;
 }
+
+// @mixin fluid-font-size($minFont: 16px, $maxFont, $minScreen: 320px, $maxScreen)
+// {
+//     font-size: calc(#{$minFont} + (#{$maxFont} - #{$minFont}) * ((100vw - #{$minScreen}) / (#{$maxScreen} - #{$minScreen})));
+// }
+
+// @mixin fluidFontSize($minFont: 1.6rem, $maxFont){ 
+//     font-size: max(min(#{$minFont}), #{$maxFont});
+// }
+

@@ -18,9 +18,8 @@ body {
     margin: 0 auto;
     // max-width: 1280;
     max-width: 1440;
-    width: 90%;
+    width: 96%;
 }
-
 
 h1,
 h2,
@@ -37,27 +36,24 @@ h3{
 p{
     font-family: $secondaryFont;
     font-size: 1.6rem;
-    // line-height: 2.4rem; 
+    line-height: 1.8rem; 
+}
+
+header{
+    position: absolute;
+    z-index: 10;
 }
 
 // LANDING PAGE
 .hole {
-    @include circle(60px, $lightColor); 
-    //... expecting (size -likely pixels, color)
-    // currently is...
-    // width: 60px; 
-    // height: 60px;
-    // background-color: $lightColor); 
-    // border-radius: 50%;
-    // text-align: center;
-    // display: flex; //enabling vertical centering
-    // flex-direction: column;
-        &.largeLogo {
-            width: calc(100vw * .9);
-            height: calc(100vw * .9);
-            max-width: 420px;
-            max-height: 420px;
+    @include circle(50px, $lightColor); //... expecting (size -likely pixels, color)
+        &.lrgLogo {
+            width: calc(30vw * 3);
+            height: calc(30vw * 3);  
             margin: auto; //vertically centering
+        }
+        &.headLogo {
+            margin: 3vh;
         }
 }
 
@@ -65,29 +61,27 @@ p{
 .featContainer { 
     display: flex; //enabling centering
     height: 100vh; //enabling vertical center
-    padding-bottom: 5vh; //visual centering
+    padding-bottom: 2vh; //visual centering
 }
 
-
-
-
+// Landing Page Text
 h1{
-    color: $secondaryColor;
-    font-size: 6.4rem;
-    line-height: 6rem; 
-    // text-transform: uppercase;
+    color: $secondaryColor; 
+    font-size: 4.6rem;
+    line-height: 4.6rem;
     font-weight: 500;
     margin: auto;
-    padding-bottom: .2rem; 
+    padding: 0 5% .2rem 5%; 
         span{
-            font-size: 2.25rem;
-            line-height: 3rem;
+            font-size: 1.8rem;
+            line-height: 1.6rem;
             text-transform: lowercase; 
             letter-spacing: .04rem;
             display: block;
             opacity: 30%;
+            padding-bottom: .4rem;
                 &:last-of-type{
-                    padding-top: .5rem;     
+                    padding-top: .4rem;     
                     color: $accentColor;
                     opacity: 60%;
             }
@@ -97,12 +91,15 @@ h1{
 // INSTRUCTIONS & START BUTTON
 .landingElement {
     visibility: hidden;
-    opacity: 0%; //needed for h1 to transition 
-    background-color: lighten($primaryColor, 8%);
-    transition: all, 1000ms;
+    opacity: 0%; //needed for h1 to transition
+    scale: 4; 
+    background-color: darken($primaryColor, 20%);
+    filter: brightness(10%) hue-rotate(197) saturate(56%);
+    transition: all, 1500ms;
 
-        // h1{
-        //     opacity: 0%;
-        //     transition: all, 1000ms;
-        // }
+        h1{
+            opacity: 0%;
+            scale: .7;
+            transition: opacity, 700ms;
+        }
 }
