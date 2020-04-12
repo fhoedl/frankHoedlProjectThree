@@ -95,11 +95,11 @@ h1{
     // scale: 4; 
     background-color: darken($primaryColor, 20%);
     filter: brightness(10%) hue-rotate(197) saturate(56%);
-    transition: all, 1000ms; 
+    transition: all, 1500ms; 
 
         h1{
             opacity: 0%;
             scale: .7;
-            transition: all, 400ms, ease-in;
+            transition: all, 300ms, ease-in;
         }
 }
