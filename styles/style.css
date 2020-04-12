@@ -350,8 +350,8 @@ h1 span:last-of-type {
   background-color: #50aace;
   -webkit-filter: brightness(10%) hue-rotate(197) saturate(56%);
           filter: brightness(10%) hue-rotate(197) saturate(56%);
-  -webkit-transition: all, 1500ms;
-  transition: all, 1500ms;
+  -webkit-transition: all, 800ms;
+  transition: all, 800ms;
 }
 
 .landingElement h1 {
