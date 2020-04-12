@@ -255,7 +255,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-transition: all, 1000ms, ease-in;
   transition: all, 1000ms, ease-in;
-  background-color: #bfe0ed;
+  background-color: #c8ebfe;
+}
+
+body .fa, body .far, body .fas {
+  font-family: "Font Awesome 5 Free";
 }
 
 .wrapper {
@@ -266,66 +270,20 @@ body {
 
 h1,
 h2,
-h3 {
-  font-family: "Lora", serif;
-}
-
-h3 {
-  display: inline-block;
-  margin: auto;
-}
-
+h3,
 p {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.8rem;
-}
-
-header {
-  position: absolute;
-  z-index: 10;
-}
-
-.hole {
-  width: 50px;
-  height: 50px;
-  background-color: #fcfff7;
-  border-radius: 50%;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.hole.lrgLogo {
-  width: calc(30vw * 3);
-  height: calc(30vw * 3);
+  font-family: "Lora", serif;
+  font-weight: 500;
+  color: #f7ffff;
   margin: auto;
-}
-
-.hole.headLogo {
-  margin: 3vh;
-}
-
-.featContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  padding-bottom: 2vh;
 }
 
 h1 {
-  color: #1b6176;
   font-size: 4.6rem;
   line-height: 4.6rem;
   font-weight: 500;
   margin: auto;
-  padding: 0 5% .2rem 5%;
+  padding: 0 5% 1rem 5%;
 }
 
 h1 span {
@@ -340,30 +298,146 @@ h1 span {
 
 h1 span:last-of-type {
   padding-top: .4rem;
-  color: #cdad45;
+  color: #fff586;
   opacity: 60%;
+}
+
+blockquote {
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10% 0 0 0;
+}
+
+blockquote div.inQuotes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(87% + 5vw);
+}
+
+blockquote .h2 {
+  position: absolute;
+}
+
+blockquote .quotationMarks {
+  font-family: 'Sorts Mill Goudy', serif;
+  color: #fff586;
+  font-size: 6rem;
+  line-height: 0rem;
+}
+
+blockquote .quotationMarks.openQuote {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  padding-top: 45%;
+  position: relative;
+  right: calc(3% - 1vw);
+  top: calc(10% - 3vw);
+}
+
+blockquote .quotationMarks.closeQuote {
+  padding-top: 45%;
+}
+
+blockquote p {
+  font-size: 14px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 0;
+  padding-right: 20%;
+  line-height: 5%;
+}
+
+h2 {
+  font-size: 2.4rem;
+  line-height: 2.6rem;
+  margin-left: 1%;
+}
+
+h2 span {
+  padding-left: 10%;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: calc(1.6rem + .8vw);
+}
+
+.info p {
+  padding-top: 2%;
+  width: 82%;
+}
+
+header {
+  position: absolute;
+  z-index: 10;
+}
+
+.hole {
+  width: 50px;
+  height: 50px;
+  background-color: #116680;
+  border-radius: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.headLogo {
+  margin: 3vh;
+}
+
+.lrgLogo,
+.info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: calc(30vw * 3);
+  height: calc(30vw * 3);
+  margin: auto;
+}
+
+.lrgLogo {
+  z-index: 10;
+}
+
+.featContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  padding-bottom: 2vh;
+  position: relative;
 }
 
 .landingElement {
   visibility: hidden;
-  opacity: 0%;
-  scale: 4;
-  background-color: #50aace;
-  -webkit-filter: brightness(10%) hue-rotate(197) saturate(56%);
-          filter: brightness(10%) hue-rotate(197) saturate(56%);
-  -webkit-transition: all, 1500ms;
-  transition: all, 1500ms;
-}
-
-.landingElement h1 {
-  opacity: 0%;
-  scale: .7;
-  -webkit-transition: all, 1000ms, ease-out;
-  transition: all, 1000ms, ease-out;
+  -webkit-transition: all, 700ms, ease-in;
+  transition: all, 700ms, ease-in;
 }
 
 @media (min-width: 480px) {
-  .hole.lrgLogo {
+  .lrgLogo,
+  .info {
     max-width: 420px;
     max-height: 420px;
   }
@@ -374,6 +448,27 @@ h1 span:last-of-type {
   h1 span {
     font-size: calc(1.6rem + .2vw);
     line-height: calc(1.6rem + .3vw);
+  }
+  blockquote div.inQuotes {
+    width: 80%;
+  }
+  blockquote div.inQuotes .quotationMarks {
+    font-size: calc(5rem + 1.6vw);
+  }
+  blockquote div.inQuotes .quotationMarks.openQuote {
+    padding-top: 45%;
+    top: calc(10% - 1vw);
+  }
+  blockquote div.inQuotes h2 {
+    font-size: calc(2rem + .7vw);
+  }
+  blockquote p {
+    color: white;
+    font-size: calc(1.3rem + .3vw);
+  }
+  p {
+    font-size: 1.7rem;
+    line-height: calc(1.6rem + .8vw);
   }
 }
 

@@ -4,13 +4,13 @@ $primaryFont: 'Lora', serif;
 $secondaryFont: 'Montserrat', sans-serif;
 
 // COLORS
-$primaryColor:  hsl(197, 56%, 76%);
-$secondaryColor: rgb(27, 97, 118);
+$primaryColor: rgb(17, 102, 128) ;
+$secondaryColor: hsl(201, 96%, 89%);
 
-$lightColor: rgba(252, 255, 247, 1);
+$lightColor: rgb(247, 255, 255);
 $darkColor: rgba(51, 55, 69, 1);
 
-$accentColor:  rgb(205, 173, 69);
+$accentColor:  rgb(255, 245, 134);
 
 // MIXINS
 @mixin circle($size: 50px, $color: $lightColor){
