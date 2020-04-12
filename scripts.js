@@ -67,7 +67,7 @@ rabbitApp.getQuestion = () => {
     $('.lrgLogo, h1').on('click', (e) =>{
         e.preventDefault();
         $("div.lrgLogo")
-             .css("transform", "scale(4)", 1200, `easeIn`)
+             .css("transform", "scale(4)", '1200ms', `easeIn`)
              .toggleClass("landingElement", 50, `easeInSine`);
             
         console.log(rabbitApp.questionsArray[0].question, `...remove log`);
