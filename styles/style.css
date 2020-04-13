@@ -268,10 +268,7 @@ body .fa, body .far, body .fas {
   width: 96%;
 }
 
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, p {
   font-family: "Lora", serif;
   font-weight: 500;
   color: #f7ffff;
@@ -318,15 +315,6 @@ p {
   line-height: calc(1.6rem + .8vw);
 }
 
-header {
-  position: absolute;
-  z-index: 10;
-}
-
-.headLogo {
-  margin: 3vh;
-}
-
 .hole {
   width: 50px;
   height: 50px;
@@ -340,6 +328,15 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+header {
+  position: absolute;
+  z-index: 10;
+}
+
+.headLogo {
+  margin: 3vh;
 }
 
 .featContainer {
@@ -374,18 +371,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.landingElement {
-  visibility: hidden;
-  -webkit-transition: all, 700ms, ease-in;
-  transition: all, 700ms, ease-in;
-}
-
-.hideMe {
-  visibility: hidden;
-  -webkit-transition: all, 700ms, ease-in;
-  transition: all, 700ms, ease-in;
 }
 
 blockquote {
@@ -482,6 +467,18 @@ blockquote p {
 .button2:hover,
 .button2:focus-within {
   background-color: #fce112;
+}
+
+.landingElement {
+  visibility: hidden;
+  -webkit-transition: all, 700ms, ease-in;
+  transition: all, 700ms, ease-in;
+}
+
+.hideMe {
+  visibility: hidden;
+  -webkit-transition: all, 700ms, ease-in;
+  transition: all, 700ms, ease-in;
 }
 
 @media (min-width: 375px) {

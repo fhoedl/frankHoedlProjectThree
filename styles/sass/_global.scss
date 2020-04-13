@@ -24,10 +24,8 @@ body {
     width: 96%;
 }
 
-h1,
-h2,
-h3,
-p
+// TYPE Elements
+h1,h2,h3,p
 {   
     font-family: $primaryFont;
     font-weight: 500;
@@ -72,20 +70,20 @@ p{
     line-height: calc(1.6rem + .8vw);
 }
 
-header{
-    position: absolute;
-    z-index: 10;
-}
-
-.headLogo {
-    margin: 3vh;
-}
-
+// Circle 
 .hole {
     @include circle(50px, $primaryColor); //... expecting (size -likely pixels, color)
 }
 
-// LANDING PAGE
+// HEADER Element
+header{
+    position: absolute;
+    z-index: 10;
+}
+.headLogo {
+    margin: 3vh;
+}
+
 // Needed to Facilitate centering
 .featContainer { 
     display: flex; //enabling centering
@@ -94,8 +92,7 @@ header{
     position: relative;
 }
 
-
-
+// Large Main Circle Element
 .lrgLogo,
 .info {
     position: absolute;
@@ -107,7 +104,6 @@ header{
     height: calc(30vw * 3);  
     margin: auto; //vertically centering
 }
-
 .lrgLogo{
     z-index: 10;
     display: flex;
@@ -115,33 +111,7 @@ header{
     align-items: center;
 }
 
-
-
-
-
-// INSTRUCTIONS & START BUTTON
-.landingElement {
-    visibility: hidden;
-    // opacity: 0%; //needed for h1 to transition
-    // scale: 4; 
-    // background-color: darken($primaryColor, 20%);
-    // filter: brightness(10%) hue-rotate(197) saturate(56%);
-    transition: all, 700ms, ease-in;
-
-        // h1{
-        //     opacity: 0%;
-        //     scale: .7;
-        //     transition: all, 1000ms, ease-out;
-        // }
-}
-
-.hideMe{
-    visibility: hidden;
-    transition: all, 700ms, ease-in;
-}
-
-
-
+// INFO Element
 blockquote {
     z-index: 5;
     display: flex;
@@ -183,39 +153,8 @@ blockquote {
             line-height: 5%;
         }
     }
-
 .info p{
     padding-top: calc(.5% + 2vw);
     width: 82%
 }
 
-.button{
-    font-family: $secondaryFont;
-    font-size: 1rem;
-    font-weight: 500;
-    color: $primaryColor;
-    background-color: $accentColor;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: .1rem;
-    padding: .7rem 1.2rem;
-    border-radius: 2rem;
-    text-decoration-line: none;
-    width: 8rem;
-    margin-top: -2%;
-    margin-bottom:calc(16% + 4vw);
-}
-
-.button2 {
-    margin: 6% auto 0;
-    text-transform: capitalize;
-}
-
-.button1:hover,
-.button1:focus-within,
-.button2:hover,
-.button2:focus-within {
-    // background-color: lighten($secondaryColor, 100%);
-    background-color: #fce112;
-
-}

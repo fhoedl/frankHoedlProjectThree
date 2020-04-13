@@ -1,0 +1,20 @@
+// ACTIVATED on JS Clicks
+.landingElement {
+    visibility: hidden;
+    // opacity: 0%; //needed for h1 to transition
+    // scale: 4; 
+    // background-color: darken($primaryColor, 20%);
+    // filter: brightness(10%) hue-rotate(197) saturate(56%);
+    transition: all, 700ms, ease-in;
+
+        // h1{
+        //     opacity: 0%;
+        //     scale: .7;
+        //     transition: all, 1000ms, ease-out;
+        // }
+}
+
+.hideMe{
+    visibility: hidden;
+    transition: all, 700ms, ease-in;
+}
