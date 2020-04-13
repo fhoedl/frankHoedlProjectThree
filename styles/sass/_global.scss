@@ -17,8 +17,6 @@ body {
         }
 }
 
-
-
 .wrapper {
     margin: 0 auto;
     // max-width: 1280;
@@ -37,13 +35,11 @@ p
     margin: auto; //vertically centering
 }
 
-// Landing Page Text
 h1{
     font-size: 4.6rem;
-    line-height: 4.6rem;
+    line-height: 4rem;
     font-weight: 500;
-    margin: auto;
-    padding: 0 5% 1rem 5%; 
+    padding: calc(10% + 3vw) 5% 0 5%; 
         span{
             font-size: 1.8rem;
             line-height: 1.6rem;
@@ -53,58 +49,18 @@ h1{
             opacity: 30%;
             padding-bottom: .4rem;
                 &:last-of-type{
-                    padding-top: .4rem;     
+                    padding-top: .5rem; 
+                    padding-bottom: 0;  
+                    margin-bottom: -5%;  
                     color: $accentColor;
-                    opacity: 60%;
+                    opacity: 100%;
             }
         }
 }
 
-blockquote {
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10% 0 0 0;  
-    div.inQuotes {
-        display: flex;
-        width: calc(87% + 5vw);
-        }
-        .h2 {
-            position:absolute;
-        }
-        .quotationMarks {
-            font-family: 'Sorts Mill Goudy', serif;
-            color: $accentColor; 
-            font-size: 6rem;
-            line-height: 0rem;           
-                &.openQuote {
-                    transform: rotate(180deg);
-                    padding-top: 45%; //note: open quote rotated
-                    position: relative;
-                    right: calc(3% - 1vw);
-                    top: calc(10% - 3vw);
-                }
-                &.closeQuote {
-                    padding-top: 45%;
-                }
-        }
-        p{
-            
-            font-size: 14px;
-            align-self: flex-end;
-            margin:0;
-            padding-right:20%;
-            line-height: 5%;
-        }
-    }
-    
-    
 h2 {
-    
-    font-size: 2.4rem;
-    line-height: 2.6rem;
+    font-size: calc(2.2rem + .5vw); // font-size: 2.25rem;
+    line-height: calc(2.2rem + 1vw); // font-size: 2.25rem;
     margin-left:1%;
         span {
             padding-left: 10%;
@@ -116,25 +72,29 @@ p{
     line-height: calc(1.6rem + .8vw);
 }
 
-.info p{
-    padding-top: 2%;
-    width: 82%
-}
-
-
 header{
     position: absolute;
     z-index: 10;
 }
 
-// LANDING PAGE
-.hole {
-    @include circle(50px, rgb(17, 102, 128)); //... expecting (size -likely pixels, color)
-}
-
 .headLogo {
     margin: 3vh;
 }
+
+.hole {
+    @include circle(50px, $primaryColor); //... expecting (size -likely pixels, color)
+}
+
+// LANDING PAGE
+// Needed to Facilitate centering
+.featContainer { 
+    display: flex; //enabling centering
+    height: 100vh; //enabling vertical center
+    padding-bottom: 2vh; //visual centering
+    position: relative;
+}
+
+
 
 .lrgLogo,
 .info {
@@ -150,15 +110,12 @@ header{
 
 .lrgLogo{
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-// Needed to Facilitate centering
-.featContainer { 
-    display: flex; //enabling centering
-    height: 100vh; //enabling vertical center
-    padding-bottom: 2vh; //visual centering
-    position: relative;
-}
+
 
 
 
@@ -176,6 +133,89 @@ header{
         //     scale: .7;
         //     transition: all, 1000ms, ease-out;
         // }
-
 }
 
+.hideMe{
+    visibility: hidden;
+    transition: all, 700ms, ease-in;
+}
+
+
+
+blockquote {
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: calc(1% + 2.3vw);
+    padding: 10% 0 0 0; 
+    div.inQuotes {
+        display: flex;
+        width: calc(87% + 5vw);
+        }
+        .h2 {
+            position:absolute;
+        }
+        .quotationMarks {
+            font-family: 'Sorts Mill Goudy', serif;
+            color: $accentColor; 
+            font-size: 6rem;
+            line-height: 0rem;           
+                &.openQuote {
+                    transform: rotate(180deg);
+                    padding-top: 45%; //note: open quote rotated
+                    position: relative;
+                    right: calc(2.5% - .5vw);
+                    top: calc(15% - 3vw);
+                }
+                &.closeQuote {
+                    padding-top: 40%;
+                }
+        }
+        p{
+            opacity: 50%;
+            font-size: 14px;
+            align-self: flex-end;
+            margin:0;
+            width: 100%;
+            padding-left: 30%;
+            line-height: 5%;
+        }
+    }
+
+.info p{
+    padding-top: calc(.5% + 2vw);
+    width: 82%
+}
+
+.button{
+    font-family: $secondaryFont;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $primaryColor;
+    background-color: $accentColor;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .1rem;
+    padding: .7rem 1.2rem;
+    border-radius: 2rem;
+    text-decoration-line: none;
+    width: 8rem;
+    margin-top: -2%;
+    margin-bottom:calc(16% + 4vw);
+}
+
+.button2 {
+    margin: 6% auto 0;
+    text-transform: capitalize;
+}
+
+.button1:hover,
+.button1:focus-within,
+.button2:hover,
+.button2:focus-within {
+    // background-color: lighten($secondaryColor, 100%);
+    background-color: #fce112;
+
+}

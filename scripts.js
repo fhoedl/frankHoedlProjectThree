@@ -64,16 +64,26 @@ rabbitApp.shuffleQuestion = function shuffle(array) {
 
 // ...on event, CALLS Question
 rabbitApp.getQuestion = () => {
-    $('.lrgLogo, h1').on('click', (e) =>{
+    $('.button1').on('click', (e) =>{
         e.preventDefault();
-        $("div.lrgLogo")
-            //  .css("transform", "scale(4)", `2000ms`,`easeInOut`)
-            //  .toggleClass("landingElement", 2000,`easeInOuSine`);
+        $('.lrgLogo')
+        //     //  .css("transform", "scale(4)", `2000ms`,`easeInOut`)
+        //     //  .toggleClass("landingElement", 2000,`easeInOuSine`);
              .addClass("landingElement");
             
         console.log(rabbitApp.questionsArray[0].question, `...remove log`);
         console.log(rabbitApp.questionsArray[1].question, `...remove log`);
         console.log(rabbitApp.questionsArray[2].question, `...remove log`);
+    });
+    $('.button2').on('click', (e) => {
+        e.preventDefault();
+        $('.info')
+            //     //  .css("transform", "scale(4)", `2000ms`,`easeInOut`)
+            //     //  .toggleClass("landingElement", 2000,`easeInOuSine`);
+            .addClass("hideMe");
+
+        console.log(`...it works`);
+
     });
 }
 

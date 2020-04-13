@@ -1,3 +1,14 @@
+// Media Queries
+
+@media (min-width: 375px){
+        blockquote {
+            div.inQuotes {
+                // width: 80%; 
+                width: calc(70% + 5vw);
+            }
+        }
+}
+
 @media (min-width: 480px){
 
     .lrgLogo,
@@ -9,7 +20,7 @@
 
     h1{
         font-size: calc(3.7rem + 1.6vw);// font-size: 6.4rem;
-        line-height: calc(3.7rem + 1.6vw); // line-height: 6.4rem; 
+        line-height: calc(3.7rem + 1vw); // line-height: 6.4rem; 
             span{
                 font-size: calc(1.6rem + .2vw); // font-size: 2.25rem;
                 line-height: calc(1.6rem + .3vw);// line-height: 2.4rem;
@@ -18,34 +29,33 @@
 
     blockquote {
             div.inQuotes {
-                width: 80%; 
-                // margin-bottom: calc(-10% +.7vw);
+                // width: 80%; 
+                width: calc(60% + 4vw);
                 .quotationMarks {
                     font-size: calc(5rem + 1.6vw);//8rem       
                         &.openQuote {
-                            padding-top: 45%; //note: open quote rotated
+                            padding-top: 35%; //note: open quote rotated
                             top: calc(10% - 1vw);
                         }
             }
-                
-            h2 {
-                // color: red; 
-                font-size: calc(2rem + .7vw); // font-size: 2.25rem;
-            }
-
         }
     }
-   blockquote p{
-        color: white;
+    blockquote p{
         font-size: calc(1.3rem + .3vw);
     }
 
     p{
-        // color: red;
         font-size: 1.7rem;
         line-height: calc(1.6rem + .8vw); // font-size: 2.25rem;
     }
+    .info p{
+    padding-top: 2%;
+    width: 82%
 }
+}
+
+
+
 
 
 

@@ -255,7 +255,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-transition: all, 1000ms, ease-in;
   transition: all, 1000ms, ease-in;
-  background-color: #c8ebfe;
+  background-color: #b0d9fc;
 }
 
 body .fa, body .far, body .fas {
@@ -280,10 +280,9 @@ p {
 
 h1 {
   font-size: 4.6rem;
-  line-height: 4.6rem;
+  line-height: 4rem;
   font-weight: 500;
-  margin: auto;
-  padding: 0 5% 1rem 5%;
+  padding: calc(10% + 3vw) 5% 0 5%;
 }
 
 h1 span {
@@ -297,9 +296,96 @@ h1 span {
 }
 
 h1 span:last-of-type {
-  padding-top: .4rem;
+  padding-top: .5rem;
+  padding-bottom: 0;
+  margin-bottom: -5%;
   color: #fff586;
-  opacity: 60%;
+  opacity: 100%;
+}
+
+h2 {
+  font-size: calc(2.2rem + .5vw);
+  line-height: calc(2.2rem + 1vw);
+  margin-left: 1%;
+}
+
+h2 span {
+  padding-left: 10%;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: calc(1.6rem + .8vw);
+}
+
+header {
+  position: absolute;
+  z-index: 10;
+}
+
+.headLogo {
+  margin: 3vh;
+}
+
+.hole {
+  width: 50px;
+  height: 50px;
+  background-color: #0c466a;
+  border-radius: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.featContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  padding-bottom: 2vh;
+  position: relative;
+}
+
+.lrgLogo,
+.info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: calc(30vw * 3);
+  height: calc(30vw * 3);
+  margin: auto;
+}
+
+.lrgLogo {
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landingElement {
+  visibility: hidden;
+  -webkit-transition: all, 700ms, ease-in;
+  transition: all, 700ms, ease-in;
+}
+
+.hideMe {
+  visibility: hidden;
+  -webkit-transition: all, 700ms, ease-in;
+  transition: all, 700ms, ease-in;
 }
 
 blockquote {
@@ -317,6 +403,7 @@ blockquote {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: calc(1% + 2.3vw);
   padding: 10% 0 0 0;
 }
 
@@ -343,96 +430,64 @@ blockquote .quotationMarks.openQuote {
           transform: rotate(180deg);
   padding-top: 45%;
   position: relative;
-  right: calc(3% - 1vw);
-  top: calc(10% - 3vw);
+  right: calc(2.5% - .5vw);
+  top: calc(15% - 3vw);
 }
 
 blockquote .quotationMarks.closeQuote {
-  padding-top: 45%;
+  padding-top: 40%;
 }
 
 blockquote p {
+  opacity: 50%;
   font-size: 14px;
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin: 0;
-  padding-right: 20%;
+  width: 100%;
+  padding-left: 30%;
   line-height: 5%;
 }
 
-h2 {
-  font-size: 2.4rem;
-  line-height: 2.6rem;
-  margin-left: 1%;
-}
-
-h2 span {
-  padding-left: 10%;
-}
-
-p {
-  font-size: 1.4rem;
-  line-height: calc(1.6rem + .8vw);
-}
-
 .info p {
-  padding-top: 2%;
+  padding-top: calc(.5% + 2vw);
   width: 82%;
 }
 
-header {
-  position: absolute;
-  z-index: 10;
-}
-
-.hole {
-  width: 50px;
-  height: 50px;
-  background-color: #116680;
-  border-radius: 50%;
+.button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0c466a;
+  background-color: #fff586;
+  text-transform: uppercase;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  letter-spacing: .1rem;
+  padding: .7rem 1.2rem;
+  border-radius: 2rem;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  width: 8rem;
+  margin-top: -2%;
+  margin-bottom: calc(16% + 4vw);
 }
 
-.headLogo {
-  margin: 3vh;
+.button2 {
+  margin: 6% auto 0;
+  text-transform: capitalize;
 }
 
-.lrgLogo,
-.info {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: calc(30vw * 3);
-  height: calc(30vw * 3);
-  margin: auto;
+.button1:hover,
+.button1:focus-within,
+.button2:hover,
+.button2:focus-within {
+  background-color: #fce112;
 }
 
-.lrgLogo {
-  z-index: 10;
-}
-
-.featContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  padding-bottom: 2vh;
-  position: relative;
-}
-
-.landingElement {
-  visibility: hidden;
-  -webkit-transition: all, 700ms, ease-in;
-  transition: all, 700ms, ease-in;
+@media (min-width: 375px) {
+  blockquote div.inQuotes {
+    width: calc(70% + 5vw);
+  }
 }
 
 @media (min-width: 480px) {
@@ -443,32 +498,32 @@ header {
   }
   h1 {
     font-size: calc(3.7rem + 1.6vw);
-    line-height: calc(3.7rem + 1.6vw);
+    line-height: calc(3.7rem + 1vw);
   }
   h1 span {
     font-size: calc(1.6rem + .2vw);
     line-height: calc(1.6rem + .3vw);
   }
   blockquote div.inQuotes {
-    width: 80%;
+    width: calc(60% + 4vw);
   }
   blockquote div.inQuotes .quotationMarks {
     font-size: calc(5rem + 1.6vw);
   }
   blockquote div.inQuotes .quotationMarks.openQuote {
-    padding-top: 45%;
+    padding-top: 35%;
     top: calc(10% - 1vw);
   }
-  blockquote div.inQuotes h2 {
-    font-size: calc(2rem + .7vw);
-  }
   blockquote p {
-    color: white;
     font-size: calc(1.3rem + .3vw);
   }
   p {
     font-size: 1.7rem;
     line-height: calc(1.6rem + .8vw);
+  }
+  .info p {
+    padding-top: 2%;
+    width: 82%;
   }
 }
 

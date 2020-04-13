@@ -4,8 +4,8 @@ $primaryFont: 'Lora', serif;
 $secondaryFont: 'Montserrat', sans-serif;
 
 // COLORS
-$primaryColor: rgb(17, 102, 128) ;
-$secondaryColor: hsl(201, 96%, 89%);
+$primaryColor: rgb(12, 70, 106) ;
+$secondaryColor: hsl(208, 93%, 84%);
 
 $lightColor: rgb(247, 255, 255);
 $darkColor: rgba(51, 55, 69, 1);
@@ -13,7 +13,7 @@ $darkColor: rgba(51, 55, 69, 1);
 $accentColor:  rgb(255, 245, 134);
 
 // MIXINS
-@mixin circle($size: 50px, $color: $lightColor){
+@mixin circle($size: 50px, $color: $primaryColor){
     // height & width are the same for circle
     // $lightColor is default
     width: #{$size}; 
