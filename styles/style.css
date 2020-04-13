@@ -310,6 +310,12 @@ h2 span {
   padding-left: 10%;
 }
 
+h3 {
+  color: #0c466a;
+  font-size: calc(1.3rem + .8vw);
+  line-height: calc(1.9rem + 1vw);
+}
+
 p {
   font-size: 1.4rem;
   line-height: calc(1.6rem + .8vw);
@@ -349,14 +355,15 @@ header {
 }
 
 .lrgLogo,
-.info {
+.info,
+.firstQuestion {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  width: calc(30vw * 3);
-  height: calc(30vw * 3);
+  width: 90vw;
+  height: 90vw;
   margin: auto;
 }
 
@@ -373,8 +380,11 @@ header {
           align-items: center;
 }
 
-blockquote {
+.info {
   z-index: 5;
+}
+
+blockquote {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -439,6 +449,43 @@ blockquote p {
   width: 82%;
 }
 
+.firstQuestion {
+  z-index: 1;
+  background-color: inherit;
+  border: 2px solid rgba(12, 70, 106, 0.317);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questionBlock {
+  width: calc(60% + 3vw);
+  height: calc(20% + 1vw);
+  background-color: none;
+}
+
+.holeOption1 {
+  border: none;
+  position: absolute;
+  background-color: #23708c;
+  height: calc(75px + 2.5vw);
+  width: calc(75px + 2.5vw);
+  top: -10%;
+}
+
+button p {
+  width: 100%;
+  text-align: center;
+  font-size: calc(1.3rem + .3vw);
+  line-height: calc(1.4rem + .5vw);
+}
+
 .button {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
@@ -485,11 +532,16 @@ blockquote p {
   blockquote div.inQuotes {
     width: calc(70% + 5vw);
   }
+  .questionBlock h3 {
+    width: 85%;
+  }
 }
 
 @media (min-width: 480px) {
+  .hole,
   .lrgLogo,
-  .info {
+  .info
+.firstQuestion {
     max-width: 420px;
     max-height: 420px;
   }
@@ -521,6 +573,12 @@ blockquote p {
   .info p {
     padding-top: 2%;
     width: 82%;
+  }
+}
+
+@media (min-width: 1120px) {
+  .questionBlock h3 {
+    width: 100%;
   }
 }
 

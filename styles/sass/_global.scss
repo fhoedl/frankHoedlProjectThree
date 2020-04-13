@@ -65,6 +65,14 @@ h2 {
         }
 }
 
+h3 {
+    color: $primaryColor;
+    // font-size: calc(2.2rem + .5vw); // font-size: 2.25rem;
+    // line-height: calc(2.2rem + 1vw); // font-size: 2.25rem;
+    font-size:  calc(1.3rem + .8vw);
+    line-height: calc(1.9rem + 1vw); 
+}
+
 p{
     font-size: 1.4rem;
     line-height: calc(1.6rem + .8vw);
@@ -94,14 +102,15 @@ header{
 
 // Large Main Circle Element
 .lrgLogo,
-.info {
+.info,
+.firstQuestion{
     position: absolute;
     left:0;
     right: 0;
     top: 0;
     bottom: 0;
-    width: calc(30vw * 3);
-    height: calc(30vw * 3);  
+    width: 90vw; 
+    height: 90vw;
     margin: auto; //vertically centering
 }
 .lrgLogo{
@@ -112,8 +121,12 @@ header{
 }
 
 // INFO Element
-blockquote {
+.info {
     z-index: 5;
+}
+
+blockquote {
+    // z-index: 5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,5 +169,39 @@ blockquote {
 .info p{
     padding-top: calc(.5% + 2vw);
     width: 82%
+}
+
+.firstQuestion {
+    z-index: 1;
+    background-color: inherit;
+    border: 2px solid rgba(12, 70, 106, 0.317);
+    // @include circle(420px, $primaryColor); //... expecting (size -likely pixels, color)
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+
+.questionBlock { 
+    width: calc(60% + 3vw);
+    height: calc(20% + 1vw);
+    background-color: none;
+    // position: relative;
+}
+
+.holeOption1 {
+    border: none;
+    position: absolute;
+    background-color: rgb(35, 112, 140);
+    height: calc(75px + 2.5vw);
+    width: calc(75px + 2.5vw);
+    top: -10%;
+}
+
+button p{
+    width: 100%;
+    text-align: center;
+    font-size: calc(1.3rem + .3vw);
+    line-height: calc(1.4rem + .5vw);
 }
 

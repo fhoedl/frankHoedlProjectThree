@@ -5,11 +5,11 @@ const rabbitApp = {};
 rabbitApp.questionsArray = [
     {   
         title: `Question 1`,
-        question: `Tom, Dick or Harry? no...`,
+        question: `Tom, Dick or Harry? no...Tom, Bjork or Barry`,
         option1: `Tom`,
         option2: `Bjork`,
         option3: `Barry`,
-        answerURL1: "You are Innocent when you Dream by Tom Waits , https://www.youtube.com/watch?v=WPxwPJn1itw",
+        answerURL1: `link to Tom Waits "This Piano has been Drinking"`,
         answerURL2: `Violently Happy by Bjork, https://www.youtube.com/watch?v=wx1YGsvdpfo`,
         answerURL3: `...link to "how deep is your love" cover`,
     },
@@ -26,10 +26,10 @@ rabbitApp.questionsArray = [
     },
     {
         title: `Question 3`,
-        question: `Meatloaf as`,
-        option1: `70's Film Star`,
-        option2: `80's Pop Legend`,
-        option3: `90's Comeback Kid`,
+        question: `David Bowie in the ...`,
+        option1: `70's`,
+        option2: `80's`,
+        option3: `2000's`,
         answerURL1: `...link to "Rocky Horror"`,
         answerURL2: `...link to bat out of hell content`,
         answerURL3: `...link to "Fight Club"`,
@@ -38,22 +38,22 @@ rabbitApp.questionsArray = [
         title: `Question 4`,
         question: `Who in the world am I?`,
         option1: `Alice`,
-        option2: `The (Mad) Hatter`,
-        option3: `The Cheshire Cat`,
-        answer1: `"“..it’s no use going back to yesterday, because I was a different person then"`,
-        answer2: `"If you only knew time as well as I do, said the Hatter, you wouldn't talk about wasting it"`,
-        answer3: `"Would you tell me, please, which way I ought to go from here?
+        option2: `(Mad) Hatter`,
+        option3: `Cheshire Cat`,
+        answerURL1: `"“..it’s no use going back to yesterday, because I was a different person then"`,
+        answerURL2: `"If you only knew time as well as I do, said the Hatter, you wouldn't talk about wasting it"`,
+        answerURL3: `"Would you tell me, please, which way I ought to go from here?
         That depends a good deal on where you want to get to, said the Cat.
         I don’t much care where–‘ said Alice. 
         Then it doesn’t matter which way you go, said the Cat."`,
     }
     ]
 
+rabbitApp.counter = 0;
+
+
 // SHUFFLING ARRAY randomly
 rabbitApp.shuffleQuestion = function shuffle(array) {
-    // alternative sort
-    // array.sort(() => Math.random() - 0.5);
-
     // Fisher-Yates shuffle. 
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -64,32 +64,57 @@ rabbitApp.shuffleQuestion = function shuffle(array) {
 
 // ...on event, CALLS Question
 rabbitApp.getQuestion = () => {
+    // MAIN Page to Instructions
     $('.button1').on('click', (e) =>{
         e.preventDefault();
         $('.lrgLogo')
-        //     //  .css("transform", "scale(4)", `2000ms`,`easeInOut`)
-        //     //  .toggleClass("landingElement", 2000,`easeInOuSine`);
              .addClass("landingElement");
-            
-        console.log(rabbitApp.questionsArray[0].question, `...remove log`);
-        console.log(rabbitApp.questionsArray[1].question, `...remove log`);
-        console.log(rabbitApp.questionsArray[2].question, `...remove log`);
     });
+
+    // Instructions to First Question
     $('.button2').on('click', (e) => {
         e.preventDefault();
+
+        const printQuestion = rabbitApp.questionsArray[rabbitApp.counter].question;
+        const optionOne = rabbitApp.questionsArray[rabbitApp.counter].option1;
+        const optionTwo = rabbitApp.questionsArray[rabbitApp.counter].option2;
+        const optionThree = rabbitApp.questionsArray[rabbitApp.counter].option3;
+        const linkOne = rabbitApp.questionsArray[rabbitApp.counter].answerURL1;
+
+        rabbitApp.getQuestion();
         $('.info')
-            //     //  .css("transform", "scale(4)", `2000ms`,`easeInOut`)
-            //     //  .toggleClass("landingElement", 2000,`easeInOuSine`);
-            .addClass("hideMe");
+            .addClass(`hideMe`);
+        $('.questionBlock h3')
+            // .append(printQuestion, optionOne, optionTwo, optionThree); 
+            .append(printQuestion); 
+        $(`.holeOption1`)
+            .toggleClass(`hideMe`);
+        $(`.holeOption1 p`)   
+            .append(optionOne);
+        
+        // selecting answer and displaying it
+        $('.questionBlock button.holeOption1').on('click', (e) => {
+            // console.log(linkOne)
+            $(`.holeOption1`).toggleClass(`hideMe`);
+            $(`.holeOption2`).toggleClass(`hideMe`);
+            $(`.holeOption3`).toggleClass(`hideMe`);
+            $(`.questionBlock h3`).empty();
+            $(`.questionBlock h3`).append(linkOne);
+        });
 
-        console.log(`...it works`);
+        console.log(linkOne);
+        rabbitApp.counter = rabbitApp.counter + 1;
 
+        return rabbitApp.counter;   
     });
+
+
+
 }
 
 // init FUNCTION Calls
 rabbitApp.init = () => {
-    rabbitApp.shuffleQuestion(rabbitApp.questionsArray)  
+    rabbitApp.shuffleQuestion(rabbitApp.questionsArray); 
     rabbitApp.getQuestion();
 }
 

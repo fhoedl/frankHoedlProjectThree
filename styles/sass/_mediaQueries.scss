@@ -7,14 +7,18 @@
                 width: calc(70% + 5vw);
             }
         }
+        .questionBlock h3{ 
+            width: 85%;
+        }
 }
 
 @media (min-width: 480px){
+    .hole,
     .lrgLogo,
-    .info {
+    .info 
+    .firstQuestion {
         max-width: 420px;
         max-height: 420px;
-
     }
 
     h1{
@@ -50,13 +54,27 @@
     .info p{
     padding-top: 2%;
     width: 82%
+    }
+
+    // h3 {
+        // font-size: calc(2.2rem + .5vw); // font-size: 2.25rem;
+        // line-height: calc(2.2rem + 1vw); // font-size: 2.25rem;
+
+        // font-size:  calc(1.3rem + .3vw);
+        // line-height: calc(1.3rem + .3vw); 
+    // }
 }
+
+@media (min-width: 1120px){
+    .questionBlock h3{ 
+        width: 100%;
+    }
 }
 
 
 // for Horizontal Screens
 @media(max-height: 480px) {
-.hole.lrgLogo { 
+.hole.lrgLogo{ 
    
 	width: 300px;
     height: 300px;
